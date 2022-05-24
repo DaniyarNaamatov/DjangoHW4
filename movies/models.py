@@ -10,6 +10,7 @@ class Director(models.Model):
         return self.name
 
 class Movie(models.Model):
+    image = models.ImageField(upload_to='movie', null=True)
     title = models.CharField(max_length=255, verbose_name='Названия')
     descriptions = models.TextField(null=True, blank=True, verbose_name= 'Описание')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
